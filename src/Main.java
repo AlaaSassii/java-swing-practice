@@ -5,33 +5,31 @@ import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.border.Border;
 
 public class Main {
 	public static void main(String[]args) {
-		Border border = BorderFactory.createLineBorder(Color.white,10);
-		JLabel label = new JLabel("Bro do you even code?");
-		ImageIcon image = new ImageIcon("images.jpg");
-		label.setIcon(image);
-		label.setHorizontalTextPosition(JLabel.CENTER);
-		label.setVerticalTextPosition(JLabel.TOP);
-		label.setForeground(Color.white);
-		label.setFont(new Font("MV Boli",Font.PLAIN,20));
-		label.setIconTextGap(20);
-		label.setBackground(new Color(0,192,255));
-		label.setOpaque(true);
-		label.setBorder(border);
-		label.setVerticalAlignment(JLabel.CENTER);
-		label.setHorizontalAlignment(JLabel.CENTER);
-//		label.setBounds(65,65,350,350);
+		JPanel redPanel = new JPanel();
+		redPanel.setBackground(Color.red);
+		redPanel.setBounds(0,0,250,250);
 		
-		MyFrame frame = new MyFrame();
+		JPanel bluePanel = new JPanel();
+		bluePanel.setBackground(Color.blue);
+		bluePanel.setBounds(250,0,250,250);
+		
+		JPanel greenPanel = new JPanel();
+		greenPanel.setBackground(Color.green);
+		greenPanel.setBounds(0,250,500,250);
+		
+		
+		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setSize(500,500);
-		frame.getContentPane().setBackground(Color.white);
-//		frame.setLayout(null);
+		frame.setLayout(null);
+		frame.setSize(750,750);
 		frame.setVisible(true);
-		frame.add(label);
-		frame.pack();
+		frame.add(redPanel);
+		frame.add(bluePanel);
+		frame.add(greenPanel);
 	}
 }
