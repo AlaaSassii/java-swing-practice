@@ -17,7 +17,7 @@ class Main {
 		JPanel panel = new JPanel();
 		panel.setPreferredSize(new Dimension(100,250));
 		panel.setBackground(Color.lightGray);
-		panel.setLayout(new FlowLayout());//zeyda mais haka ken t7b trod layout flow
+		panel.setLayout(new FlowLayout());//zeyda mais haka ken t7b trod layout flow 5trha panel 
 		
 		panel.add(new JButton("1"));
 		panel.add(new JButton("1"));
