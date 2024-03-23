@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 class Main {
 	public static void main(String[]args) {
-		MyFrame frame = new MyFrame();
-
+//		MyFrame frame = new MyFrame();
+		SliderDemo slider = new SliderDemo();
 	}
 }

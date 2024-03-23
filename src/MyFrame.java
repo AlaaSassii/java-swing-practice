@@ -17,17 +17,14 @@ import javax.swing.JTextField;
 
 
 public class MyFrame extends JFrame implements ActionListener {
-	JComboBox comboBox;
+	SliderDemo
+	
 	MyFrame(){
 		// COMBOBOX
-		String[] animals = {"dog","cat","bird"};
-		comboBox = new JComboBox(animals);
-		comboBox.addItem("fish");
+		
 		 
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new FlowLayout());
-		this.add(comboBox);
-		comboBox.addActionListener(this);
 		this.pack();
 		this.setVisible(true);
 		
