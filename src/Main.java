@@ -12,6 +12,6 @@ import javax.swing.JPanel;
 class Main {
 	public static void main(String[]args) {
 //		MyFrame frame = new MyFrame();
-		SliderDemo slider = new SliderDemo();
+		ProgressBar slider = new ProgressBar();
 	}
 }

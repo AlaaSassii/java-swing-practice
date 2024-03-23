@@ -17,7 +17,7 @@ import javax.swing.JTextField;
 
 
 public class MyFrame extends JFrame implements ActionListener {
-	SliderDemo
+	
 	
 	MyFrame(){
 		// COMBOBOX
@@ -33,10 +33,10 @@ public class MyFrame extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource()== comboBox) {
-			System.out.println(comboBox.getSelectedItem());
-			System.out.println(comboBox.getSelectedIndex());
-		}
+//		if(e.getSource()== comboBox) {
+//			System.out.println(comboBox.getSelectedItem());
+//			System.out.println(comboBox.getSelectedIndex());
+//		}
 	}
 	
 		}
