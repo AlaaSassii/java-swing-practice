@@ -1,61 +1,71 @@
-
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
-import java.io.File;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JColorChooser;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 
+public class MyFrame extends JFrame implements MouseListener {
 
-public class MyFrame extends JFrame implements ActionListener {
 	
-	
-	JButton button;
 	JLabel label;
 	
+   MyFrame(){
+	   this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	   this.setSize(500,500);
+	   this.setLayout(null);
+	   
+	   label = new JLabel();
+	   label.setBounds(0,0,100,100);
+	   label.setBackground(new Color(0,192,255));
+	   label.setOpaque(true);
+	   label.addMouseListener(this);
+	   this.add(label);
+	   
+	   this.setVisible(true);
+   }
 
-	MyFrame(){
-		button = new JButton("pick a color");
-		button.addActionListener(this);
-		
-		label = new JLabel("this is Some Text :D");
-		label.setBackground(Color.white);
-		label.setFont(new Font("MV Boli",Font.PLAIN,100));
-		
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setLayout(new FlowLayout());
-		this.setVisible(true);
-		this.add(button);
-		this.add(label);
-		this.pack();
-	}
+@Override
+public void mouseClicked(MouseEvent e) {
+	// TODO Auto-generated method stub
+	System.out.println("public void mouseClicked(MouseEvent e) ");
+	label.setBackground(Color.black);
+	label.setText("mouseClicked");
+}
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		if(e.getSource() == button) {
-			JColorChooser colorChooser = new JColorChooser();
-			Color color = JColorChooser.showDialog(null,"pick a color .. I guess",Color.black);
-			label.setForeground(color);
-		}
-		// nicec
-	
-	
-		}}
+@Override
+public void mousePressed(MouseEvent e) {
+	// TODO Auto-generated method stub
+	System.out.println("public void mousePressed(MouseEvent e)");
+	label.setBackground(Color.red);
+	label.setText("mousePressed");
+}
+
+@Override
+public void mouseReleased(MouseEvent e) {
+	// TODO Auto-generated method stub
+	System.out.println("public void mouseReleased(MouseEvent e)");
+	label.setBackground(Color.yellow);
+	label.setText("mouseReleased");
+}
+
+@Override
+public void mouseEntered(MouseEvent e) {
+	// TODO Auto-generated method stub
+	System.out.println("public void mouseEntered(MouseEvent e)");
+	label.setBackground(Color.green);
+	label.setText("mouseEntered");
+}
+
+@Override
+public void mouseExited(MouseEvent e) {
+	// TODO Auto-generated method stub
+	System.out.println("public void mouseExited(MouseEvent e)");
+	label.setBackground(Color.blue);
+	label.setText("mouseExited");
+}
+}
