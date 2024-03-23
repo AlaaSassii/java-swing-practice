@@ -12,9 +12,11 @@ import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
+import javax.swing.JColorChooser;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -24,32 +26,35 @@ import javax.swing.JTextField;
 
 public class MyFrame extends JFrame implements ActionListener {
 	
+	
 	JButton button;
+	JLabel label;
+	
+
 	MyFrame(){
-		button = new JButton("Select File");
+		button = new JButton("pick a color");
 		button.addActionListener(this);
+		
+		label = new JLabel("this is Some Text :D");
+		label.setBackground(Color.white);
+		label.setFont(new Font("MV Boli",Font.PLAIN,100));
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new FlowLayout());
-		this.setSize(500,500);
 		this.setVisible(true);
 		this.add(button);
-		
+		this.add(label);
+		this.pack();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource() == button) {
-			JFileChooser fileChooser = new JFileChooser();
-			fileChooser.setCurrentDirectory(new File("."));
-			int response = fileChooser.showOpenDialog(null);
-			if(response == JFileChooser.APPROVE_OPTION) {
-				File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
-				System.out.println(file);
-				
-			}
+			JColorChooser colorChooser = new JColorChooser();
+			Color color = JColorChooser.showDialog(null,"pick a color .. I guess",Color.black);
+			label.setForeground(color);
 		}
-	}
 	
-		}
+	
+		}}
