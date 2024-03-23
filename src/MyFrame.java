@@ -6,31 +6,42 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 
 public class MyFrame extends JFrame  implements ActionListener {
-	JButton button ; 
-	JTextField textField;
+
+	JCheckBox checkBox;
+	JButton button;
+	ImageIcon xIcon;
+	ImageIcon checkIcon;
+	
 	MyFrame(){
-		button = new JButton("click me!!");
+		button = new JButton();
+		button.setText("submit");
 		button.addActionListener(this);
 		
-		textField = new JTextField();
-		textField.setPreferredSize(new Dimension(250,40));
-		textField.setFont(new Font("Consolas",Font.PLAIN,35));
-		textField.setForeground(Color.white);
-		textField.setBackground(Color.red);
-		textField.setCaretColor(Color.white);
-		textField.setText("username");
+		xIcon = new ImageIcon("images.png");
+		checkIcon = new ImageIcon("star.png");
 		
+		
+		checkBox = new JCheckBox();
+		checkBox.setText("I'm not a robot");
+		checkBox.setFocusable(false);
+		checkBox.setFont(new Font("Consolas",Font.PLAIN,35));
+		checkBox.setIcon(xIcon);
+		checkBox.setSelectedIcon(checkIcon);
 		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setLayout(new FlowLayout());	
-		this.add(textField);
+		this.add(checkBox);
 		this.add(button);
+		this.add(xIcon);
+		this.add(checkIcon);
 		this.pack();
 		this.setVisible(true);
 	}
@@ -39,9 +50,7 @@ public class MyFrame extends JFrame  implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource() == button) {
-			System.out.println("Welcome " + textField.getText());
-			textField.setEditable(false);
-
+			System.out.println(checkBox.isSelected());
 		}
 	}
 
